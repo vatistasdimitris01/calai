@@ -29,7 +29,7 @@ export default function Loading() {
   return (
     <div className="fullscreen-page flex flex-col items-center justify-center px-6">
       {/* Top buttons */}
-      <div className="fixed top-14 left-0 right-0 flex justify-between px-6 z-10">
+      <div className="fixed top-0 left-0 right-0 flex justify-between px-6 z-10" style={{ paddingTop: 'max(env(safe-area-inset-top, 0px), 12px)' }}>
         <button
           onClick={() => navigate('/camera')}
           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center tap-scale"

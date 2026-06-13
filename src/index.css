@@ -13,8 +13,7 @@ html {
   padding: 0;
   width: 100%;
   min-height: 100%;
-  background: #fff;
-  color-scheme: light;
+  background-color: #fff;
 }
 
 body,
@@ -22,8 +21,9 @@ body,
   margin: 0;
   padding: 0;
   width: 100%;
+  min-height: 100vh;
   min-height: 100dvh;
-  background: #fff;
+  background-color: #fff;
 }
 
 body {
@@ -33,10 +33,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.app-shell,
 .fullscreen-page {
   width: 100%;
+  min-height: 100vh;
   min-height: 100dvh;
-  background: #fff;
+  background-color: #fff;
+}
+
+button,
+[role="button"] {
+  touch-action: manipulation;
 }
 
 @keyframes pulse-dot {

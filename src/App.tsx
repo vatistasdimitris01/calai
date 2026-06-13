@@ -47,7 +47,9 @@ function AppShell() {
 export default function App() {
   return (
     <BrowserRouter>
-      <AppShell />
+      <div className="app-shell">
+        <AppShell />
+      </div>
     </BrowserRouter>
   )
 }
