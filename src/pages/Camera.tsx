@@ -18,7 +18,7 @@ export default function Camera() {
   }, [navigate])
 
   return (
-    <div className="fixed inset-0 z-50 bg-black overflow-hidden" style={{ height: '100dvh' }}>
+    <div className="fixed inset-0 z-50 bg-black overflow-hidden border border-white/20" style={{ height: '100dvh' }}>
       {/* Flash overlay */}
       {flash && <div className="fixed inset-0 z-30 animate-flash-overlay bg-white" />}
 
