@@ -9,22 +9,10 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 )
 
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').then((reg) => {
-      reg.addEventListener('updatefound', () => {
-        const newSW = reg.installing
-        if (newSW) {
-          newSW.addEventListener('statechange', () => {
-            if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
-              window.location.reload()
-            }
-          })
-        }
-      })
-    })
-  })
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    window.location.reload()
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).then((reg) => {
+      reg.update()
+    }).catch(() => {})
   })
 }

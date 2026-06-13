@@ -1,5 +1,3 @@
-const CACHE = 'calai-v2'
-
 self.addEventListener('install', () => {
   self.skipWaiting()
 })
@@ -14,7 +12,6 @@ self.addEventListener('activate', (e) => {
 })
 
 self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then((r) => r || fetch(e.request))
-  )
+  if (e.request.method !== 'GET') return
+  e.respondWith(fetch(e.request))
 })
